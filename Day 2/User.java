@@ -2,23 +2,24 @@ class User {
     String name;
     int age;
     long phone;
-    
-    User(String n, int a, long p) {
-        System.out.println("User(String, int, long) constructor");
-        name = n;
-        age = a;
-        phone = p;
+    Identifier identifier; 
+    User(String name, int age, long phone, Identifier identifier) {
+        this(name, age);
+        this.phone = phone;
+        this.identifier = identifier;
+        System.out.println("User(String, int, long, Identifier) constructor");
     }
-    User(String n, int a) {
+    User(String name, int age) {
+        this.name = name;
+        this.age = age;
         System.out.println("User(String, int) constructor");
-        name = n;
-        age = a;
     }
-    void setPhone(long p) {
-        phone = p;
+    void setPhone(long phone) {
+        this.phone = phone;
     }
     void display() {
-        System.out.println("Name = "+name+", Age = "+age+", Phone = "+phone);
+        System.out.println("Name = "+this.name+", Age = "+age+", Phone = "+phone);
+        System.out.println("Pan = "+identifier.pan+", Aadhar No = "+identifier.aadharNo);
         System.out.println("----------------------");
     }
 }
