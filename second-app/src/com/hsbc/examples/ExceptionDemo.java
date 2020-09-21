@@ -39,7 +39,7 @@ public class ExceptionDemo {
 		System.out.println("Program exits normally!");
 	}
 	
-	public static void operation(int x, int y)  throws ArithmeticException {
+	public static void operation(int x, int y) {
 		if(y == 0) {
 			throw new ArithmeticException("Input is 0 to divide");
 		}
