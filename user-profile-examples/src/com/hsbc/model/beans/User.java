@@ -7,20 +7,17 @@ public class User {
 	private long phone;
 	// later we will add address
 	
+	// this is a dummy counter used because we don't have database
+	private static int userCounter = 1;
+	
 	public int getUserId() {
 		return userId;
 	}
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.userId = userCounter++;
 	}
-	public User(int userId, String name, String password, long phone) {
-		super();
-		this.userId = userId;
-		this.name = name;
-		this.password = password;
-		this.phone = phone;
-	}
+	
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
@@ -41,6 +38,10 @@ public class User {
 	}
 	public void setPhone(long phone) {
 		this.phone = phone;
+	}
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", name=" + name + ", password=" + password + ", phone=" + phone + "]";
 	}
 	
 }
