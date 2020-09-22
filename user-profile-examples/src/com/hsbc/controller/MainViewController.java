@@ -51,10 +51,27 @@ public class MainViewController {
 					System.out.println(userFound);
 				} catch (UserNotFoundException e) {
 					// print error on different device
-					System.err.println("ERROR:"+e.getMessage());
+					System.err.println("Error:"+e.getMessage());
 				}
 				break;
-				
+			case 4:
+				System.out.println("Enter user id and phone separated by space");
+				try {
+					User updatedUser = service.updatePhoneNo(scanner.nextInt(), scanner.nextLong());
+					System.out.println(updatedUser);
+				} catch(UserNotFoundException e) {
+					System.err.println("Error: "+e.getMessage());
+				}
+				break;
+			case 5:
+				System.out.println("Enter user id and password separated by space");
+				try {
+					User updatedUser = service.updatePassword(scanner.nextInt(), scanner.next());
+					System.out.println(updatedUser);
+				} catch(UserNotFoundException e) {
+					System.err.println("Error: "+e.getMessage());
+				}
+				break;
 			}
 		} while(option != 6);
 		

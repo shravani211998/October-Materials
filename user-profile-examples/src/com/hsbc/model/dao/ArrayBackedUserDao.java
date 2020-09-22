@@ -32,8 +32,13 @@ public class ArrayBackedUserDao implements UserDao {
 	// Implement this method
 	@Override
 	public User updateUser(int userId, User user) {
-		// TODO Auto-generated method stub
-		return null;
+		for(int i = 0; i < index; i++) {
+			if(userArray[i].getUserId() == userId) {
+				userArray[i] = user;
+				break;
+			}
+		}
+		return user;
 	}
 
 }

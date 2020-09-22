@@ -36,13 +36,16 @@ public class UserServiceImpl implements UserService {
 	// Implement updatePhoneNo
 	@Override
 	public User updatePhoneNo(int userId, long phone) throws UserNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		User user = this.fetchUserById(userId);
+		user.setPhone(phone);
+		return dao.updateUser(userId, user);
+		
 	}
 	// Implement updatePhoneNo
 	@Override
 	public User updatePassword(int userId, String newPassword) throws UserNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		User user = this.fetchUserById(userId);
+		user.setPassword(newPassword);
+		return dao.updateUser(userId, user);
 	}
 }
