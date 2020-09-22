@@ -18,5 +18,22 @@ public class ArrayBackedUserDao implements UserDao {
 	public User[] fetchUsers() {
 		return userArray;
 	}
+	@Override
+	public User fetchUserById(int userId) {
+		User user = null;
+		for(int i = 0; i < index; i++) {
+			if(userArray[i].getUserId() == userId) { 
+				user = userArray[i];
+				return user;
+			}
+		}
+		return null;
+	}
+	// Implement this method
+	@Override
+	public User updateUser(int userId, User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

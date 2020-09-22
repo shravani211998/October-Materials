@@ -2,6 +2,7 @@ package com.hsbc.controller;
 
 import java.util.Scanner;
 
+import com.hsbc.exception.UserNotFoundException;
 import com.hsbc.model.beans.User;
 import com.hsbc.model.business.UserService;
 import com.hsbc.model.utility.Type;
@@ -43,6 +44,15 @@ public class MainViewController {
 				}
 				break;
 			case 3:
+				System.out.println("Enter user id");
+				try {
+					User userFound = service.fetchUserById(scanner.nextInt());
+					// print on different device
+					System.out.println(userFound);
+				} catch (UserNotFoundException e) {
+					// print error on different device
+					System.err.println("ERROR:"+e.getMessage());
+				}
 				break;
 				
 			}

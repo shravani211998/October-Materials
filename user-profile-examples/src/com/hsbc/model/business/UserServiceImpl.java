@@ -1,5 +1,6 @@
 package com.hsbc.model.business;
 
+import com.hsbc.exception.UserNotFoundException;
 import com.hsbc.model.beans.User;
 import com.hsbc.model.dao.UserDao;
 import com.hsbc.model.utility.Type;
@@ -22,5 +23,26 @@ public class UserServiceImpl implements UserService {
 	public User[] getAllUsers() {
 		// no business validations
 		return dao.fetchUsers();
+	}
+	@Override
+	public User fetchUserById(int userId) throws UserNotFoundException {
+		// no business validation done
+		User user = dao.fetchUserById(userId);
+		if(user == null) {
+			throw new UserNotFoundException("Sorry user with an id "+userId+" not found");
+		}
+		return user;
+	}
+	// Implement updatePhoneNo
+	@Override
+	public User updatePhoneNo(int userId, long phone) throws UserNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	// Implement updatePhoneNo
+	@Override
+	public User updatePassword(int userId, String newPassword) throws UserNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
