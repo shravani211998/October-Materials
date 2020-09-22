@@ -5,7 +5,7 @@ import com.hsbc.model.beans.User;
 public class ArrayBackedUserDao implements UserDao {
 
 	// temporary database
-	private static User[] userArray = new User[10];
+	private static User[] userArray = new User[3];
 	
 	private static int index = 0;
 	

@@ -1,7 +1,7 @@
 package com.hsbc.model.service;
 
+import com.hsbc.exception.AccountNotFoundException;
 import com.hsbc.model.beans.Account;
-import com.hsbc.model.beans.AccountNotFoundException;
 
 public interface AccountService {
 	public Account createAccount(Account account); 
