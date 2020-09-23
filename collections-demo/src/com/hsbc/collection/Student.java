@@ -1,6 +1,6 @@
 package com.hsbc.collection;
 
-public class Student {
+public class Student implements Comparable<Student> {
 	private int rollNo;
 	private String name;
 	private String grade;
@@ -55,6 +55,17 @@ public class Student {
 		if (rollNo != other.rollNo)
 			return false;
 		return true;
+	}
+	/*
+	 * compareTo returns +, 0, -
+	 * + greater
+	 * 0 neutral
+	 * - lower
+	 */
+	@Override
+	public int compareTo(Student o) {
+		
+		return (this.rollNo - o.getRollNo());
 	}
 	
 }
