@@ -1,6 +1,8 @@
 package com.hsbc.model.beans;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 	private int userId;
 	private String name;
 	private String password;
@@ -15,7 +17,7 @@ public class User {
 	}
 	public User() {
 		super();
-		this.userId = userCounter++;
+		//this.userId = userCounter++;
 	}
 	
 	public void setUserId(int userId) {
