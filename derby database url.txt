@@ -3,3 +3,18 @@ http://apachemirror.wuchna.com/db/derby/db-derby-10.14.2.0/
 
 Download:
 db-derby-10.14.2.0-bin.zip  
+
+
+
+connect 'jdbc:derby://localhost:1527/mydb;create=true;user=kishor;password=kishor123';
+
+create table user_table(user_id int primary key, 
+	name varchar(15), 	
+	password varchar(15), 
+	phone bigint);
+
+
+create sequence user_seq as int start with 10 increment by 1;
+
+
+
