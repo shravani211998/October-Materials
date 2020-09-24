@@ -16,5 +16,7 @@ create table user_table(user_id int primary key,
 
 create sequence user_seq as int start with 10 increment by 1;
 
+insert into user_table values(next value for user_seq, 'Alex', 'alex123', 990012345);
+
 
 
